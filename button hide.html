@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+    <script>
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("p").hide();
+            });
+            $("#show").click(function () {
+                $("p").show();
+            });
+            $("#toggle").click(function () {
+                $("p").toggle();
+            });
+
+            $("#hide").click(function () {
+                confirm("Are You Sure?");
+                $("#box").show(800);
+                $("#hide").prop('disable', true);
+                $("#show").prop('disable', false);
+            });
+
+            $("#show").click(function () {
+                confirm("are you sure?");
+                $("#box").show(800);
+                $("#hide").prop('disable', false);
+                $("#show").prop('disable', true);
+            });
+
+            let a = 0;
+            $("#toggle").click(function () {
+                $("#box").toggle(800);
+                if (a == 0) {
+                    $("#toggle").html('show');
+                    a = 1;
+                }
+                else {
+                    $("#toggle").html('hide');
+                    a = 0;
+
+                }
+            });
+
+            $("#plus").click(function () {
+                if ($("p").width() <= 100) {
+                    $('p').width($('p').width() + 20);
+                    $('p').height($('p').height() + 20);
+                }
+            });
+
+            $("#minus").click(function () {
+                if ($("p").width() >= 50) {
+                    $('p').width($('p').width() - 20);
+                    $('p').height($('p').height() - 20);
+                }
+            });
+
+
+
+        });
+
+
+    </script>
+    <style>
+        p {
+
+            background-color: black;
+            color: aliceblue;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <p>
+
+
+    </p>
+
+    <hr>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Hide</button>
+    <button id="plus"><i class="fa  fa-plus"></i></button>
+    <button id="minus"><i class="fa fa-minus"></i></button>
+    
+
+</body>
+
+</html>
